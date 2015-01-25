@@ -6,6 +6,15 @@
 
 		<title>LanHub v2</title>
 		<link href="/stylesheets/style.css" rel="stylesheet">
+		<script type="text/javascript">
+// <![CDATA[
+		function scrollToBottom(elm_id)
+			{
+			var elm = document.getElementById(elm_id);
+				elm.scrollTop = elm.scrollHeight;
+			}
+		// ]]>
+		</script>
 	</head>
 
 	<body>
@@ -13,9 +22,11 @@
 		<div id="messagebox">
 			<ul id="messages"></ul>
 		</div>
+		<div id="chat-input">
 			<form action="">
 				<input id="m" autocomplete="off"/><button>Send</button>
 			</form>
+		</div>
 
 	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -28,9 +39,11 @@
 	  });
 	  socket.on('chat message', function(msg){
 	    $('#messages').append($('<li>').text(msg));
+	    scrollToBottom('messagebox');
 	  });
 	  socket.on('server message', function(msg){
 	  $('#messages').append($('<li style="color:#F00">').text(msg));
+	  scrollToBottom('messagebox');
 	  });
 	</script>
 	</body>

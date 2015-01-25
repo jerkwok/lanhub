@@ -19,6 +19,7 @@ io.on('connection', function(socket){
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
+    //scrollToBottom('messagebox');
   });
 });
 
@@ -35,3 +36,4 @@ app.get('/',function(req,res){
 http.listen(3001, function(){
 	console.log('listening on port 3001');
 });
+
