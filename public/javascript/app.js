@@ -10,8 +10,14 @@ var socket = io();
 	    	case ":kyubey":
 		    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
 		    	break;
+		    case ":deko":	    
+	    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
+	    		break;
 		    case ":snout":	    
 	    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
+	    		break;
+	    	case ":sugoi":
+				$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/sugoi.gif">'));
 	    		break;
 	    	case ":baka":
 				$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/baka.gif">'));
