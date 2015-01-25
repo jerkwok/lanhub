@@ -4,7 +4,7 @@ var socket = io();
 	    $('#m').val('');
     return false;
   	});
-  	
+
 	socket.on('chat message', function(msg){
 	    switch(msg){
 	    	case ":kyubey":
@@ -12,6 +12,12 @@ var socket = io();
 		    	break;
 		    case ":snout":	    
 	    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
+	    		break;
+	    	case ":baka":
+				$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/baka.gif">'));
+	    		break;
+	    	case ":gasp":
+				$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/gasp.png">'));
 	    		break;
 	    	default: 
 	    		$('#messages').append($('<li>').text(msg));
