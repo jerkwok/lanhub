@@ -22,9 +22,16 @@
 			<h1>LanHub</h1>
 			<h4>best chat system evar.</h4>
 			<br>
-			<h4>eventually a list of chat rooms and users will go here.</h4>
+			<section>
+				<b>commands:</b>
+				<ul id="list">
+					<li>:kyubey
+					<li>:snout
+				</ul>
+			</section>
+
 			<div id="footer">
-				&copy; 2015 Dennis Pacewicz  |  <a href="http://www.github.com/DennisPacewicz/lanhub">Github</a>
+				&copy; 2015 Dennis Pacewicz | <a href="http://www.github.com/DennisPacewicz/lanhub">GitHub</a>
 			</div>
 		</div>
 		<div id="main">
@@ -40,29 +47,6 @@
 		</div>
 	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-	<script>
-	  var socket = io();
-	  $('form').submit(function(){
-	    socket.emit('chat message', $('#m').val());
-	    $('#m').val('');
-	    return false;
-	  });
-	  socket.on('chat message', function(msg){
-	    if (msg == 'kyubey'){
-	    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
-	    } else {
-	    	if (msg == 'snout'){
-	    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
-	    	} else {
-	    		$('#messages').append($('<li>').text(msg));
-	    	}
-	    }
-	    scrollToBottom('messagebox');
-	  });
-	  socket.on('server message', function(msg){
-	  $('#messages').append($('<li style="color:#F00">').text(msg));
-	  scrollToBottom('messagebox');
-	  });
-	</script>
+	<script src="javascript/app.js"></script>
 	</body>
 </html>

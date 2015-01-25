@@ -17,8 +17,8 @@ h1{
 }
 form input {
 	border: 0;
-	padding: 10px 0px 10px 0px; 
-	width: 90%;
+	padding: 10px 1% 10px 1%; 
+	width: 88%;
 }
 form button { 
 	width: 9.5%; 
@@ -44,6 +44,10 @@ form button {
 	width:280px;
 	background:#607D8B;
 }
+#menu section{
+	background-color:#455A64;
+	padding:10px 20px;
+}
 #menu h1 {
 	color:#FFF;
 	padding:10px 20px 10px 20px;
@@ -56,8 +60,11 @@ form button {
 	position:absolute;
 	bottom:0;
 	width:100%;
-	padding:10px 20px 10px 20px;
+	padding:10px 0px 10px 0px;
+	text-align:center;
 }
+#list { list-style-type: none; text-indent:30px; padding-top:2px;}
+#list li { padding-top:3px;}
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #eee; }
