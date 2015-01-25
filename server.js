@@ -10,6 +10,7 @@ app.use(serveStatic('public'));
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  io.emit('server message', 'someone has joined the chat');
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
