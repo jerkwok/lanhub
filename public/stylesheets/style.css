@@ -32,11 +32,11 @@ form button {
     overflow-x:hidden;
     overflow-y:visible;
 	width:100%;
-	height: -moz-calc(100% - 100px); /* Firefox */
- 	height: -webkit-calc(100% - 100px); /* Chrome, Safari */
- 	height: calc(100% - 100px);
+	height: -moz-calc(100% - 110px); /* Firefox */
+ 	height: -webkit-calc(100% - 110px); /* Chrome, Safari */
+ 	height: calc(100% - 110px);
 	display:block;
-	overflow:scroll;
+	overflow-y:scroll;
 }
 #chat-input{
 	background: #000; 
