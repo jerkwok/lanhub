@@ -48,7 +48,11 @@
 	    return false;
 	  });
 	  socket.on('chat message', function(msg){
-	    $('#messages').append($('<li>').text(msg));
+	    if (msg == 'kyubey'){
+	    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
+	    } else {
+	    	$('#messages').append($('<li>').text(msg));
+	    }
 	    scrollToBottom('messagebox');
 	  });
 	  socket.on('server message', function(msg){
