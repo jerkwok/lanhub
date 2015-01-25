@@ -31,6 +31,6 @@ app.get('/',function(req,res){
 	res.sendFile(__dirname + '/public/index.html');
 });
 
-http.listen(3000, function(){
-	console.log('listening on port 3000');
+http.listen(3001, function(){
+	console.log('listening on port 3001');
 });
