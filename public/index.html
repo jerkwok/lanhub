@@ -51,7 +51,11 @@
 	    if (msg == 'kyubey'){
 	    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
 	    } else {
-	    	$('#messages').append($('<li>').text(msg));
+	    	if (msg == 'snout'){
+	    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
+	    	} else {
+	    		$('#messages').append($('<li>').text(msg));
+	    	}
 	    }
 	    scrollToBottom('messagebox');
 	  });
