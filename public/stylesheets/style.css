@@ -52,6 +52,12 @@ form button {
 	color:#CFD8DC;
 	padding:0px 20px 0px 20px;
 }
+#footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	padding:10px 20px 10px 20px;
+}
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #eee; }
@@ -66,7 +72,7 @@ form button {
 	overflow-y:scroll;
 }
 #chat-input{
-	background: #212121; 
+	background: #455A64; 
 	padding:0.25%;
 	position:fixed;
 	bottom: 0;
