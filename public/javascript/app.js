@@ -25,6 +25,9 @@ var socket = io();
 	    	case ":gasp":
 				$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/gasp.png">'));
 	    		break;
+	    	case "":
+				//$('#messages').append($(''));
+	    		break;
 	    	default: 
 	    		$('#messages').append($('<li>').text(msg));
 		}

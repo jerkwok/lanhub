@@ -29,6 +29,7 @@ form button {
 	padding: 10px 0px 10px 0px; 
 }
 #main{
+	font-size:1.1em;
 	position:relative;
 	height:100%;
 	width: -moz-calc(100% - 280px); /* Firefox */
@@ -37,6 +38,7 @@ form button {
 	float:left;
 }
 #menu{
+	font-size:1.1em;
 	color:#CFD8DC;
 	position:relative;
 	float:left;
@@ -63,7 +65,7 @@ form button {
 	padding:10px 0px 10px 0px;
 	text-align:center;
 }
-#list { list-style-type: none; text-indent:30px; padding-top:2px;}
+#list { list-style-type: none; text-indent:20px; padding-top:2px;}
 #list li { padding-top:3px;}
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 10px; text-indent:10px;}
