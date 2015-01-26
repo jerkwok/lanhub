@@ -1,4 +1,5 @@
 var socket = io();	
+var username;
 
     socket.on('connect', function (){
     	var u = prompt("what's your name?");
@@ -12,6 +13,8 @@ var socket = io();
     		}
     	}
      	socket.emit('adduser', u);
+     	username = u;
+     	//$('#messages').append($('<li>'.text("usr")));
     });	
 
  	var userList = [];
@@ -30,7 +33,7 @@ var socket = io();
     return false;
   	});
 
-	socket.on('chat message', function(msg,username){
+	socket.on('chat message', function(msg){
 		if(msg.trim().length != 0){
 			//$('#messages').append($('<li>').text("test"));
 		    switch(msg){

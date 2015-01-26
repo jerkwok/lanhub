@@ -9,7 +9,6 @@ var serveStatic = require('serve-static');
 app.use(serveStatic('public'));
 
 var users = [];
-var username;
 
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -48,7 +47,7 @@ io.on('connection', function(socket){
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg,"username");
+    io.emit('chat message', msg);
     //scrollToBottom('messagebox');
   });
 });
