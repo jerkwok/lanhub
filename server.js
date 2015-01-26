@@ -8,13 +8,32 @@ var connect = require('connect');
 var serveStatic = require('serve-static');
 app.use(serveStatic('public'));
 
+var users = [];
+
 io.on('connection', function(socket){
   console.log('a user connected');
-  io.emit('server message', 'someone has joined the chat');
+  //io.emit('server message', 'someone has joined the chat');
+
+  socket.on('adduser', function (user) {
+    socket.user = user;
+    users.push(user);
+    updateClients();
+  });
+
   socket.on('disconnect', function(){
     console.log('user disconnected');
-    io.emit('server message', 'someone has left the chat');
+    //io.emit('server message', 'someone has left the chat');
+      for(var i=0; i<users.length; i++) {
+        if(users[i] == socket.user) {
+          delete users[users[i]];
+        }
+      }
+    updateClients(); 
   });
+
+  function updateClients() {
+    io.sockets.emit('update', users);
+  }
 });
 
 io.on('connection', function(socket){

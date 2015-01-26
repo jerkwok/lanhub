@@ -1,4 +1,19 @@
-var socket = io();
+var socket = io();	
+
+    socket.on('connect', function (){
+     	socket.emit('adduser', prompt("What's your name?"));
+    });	
+
+ 	var userList = [];
+
+    socket.on('update', function (users){
+        userList = users;
+        $('#user').empty();
+        for(var i=0; i<userList.length; i++) {
+            $('#user').append(userList[i] + "<br>"); 
+        }
+    });
+
 	$('form').submit(function(){
 	    socket.emit('chat message', $('#m').val());
 	    $('#m').val('');
@@ -11,8 +26,8 @@ var socket = io();
 		    	case ":kyubey":
 			    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
 			    	break;
-			    case ":deko-desu":	    
-		    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/nmPPCkF6-fk?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
+			    case ":deko":	    
+		    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/nmPPCkF6-fk" frameborder="0" allowfullscreen></iframe>'));
 		    		break;
 			    case ":snout":	    
 		    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
