@@ -12,20 +12,24 @@ var users = [];
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  //io.emit('server message', 'someone has joined the chat');
 
   socket.on('adduser', function (user) {
     socket.user = user;
     users.push(user);
     updateClients();
+    io.emit('server message', user +" has joined the chat.");
   });
 
   socket.on('disconnect', function(){
     console.log('user disconnected');
-    //io.emit('server message', 'someone has left the chat');
+
       for(var i=0; i<users.length; i++) {
         if(users[i] == socket.user) {
-          delete users[users[i]];
+          //delete users[i]; //doesnt work lol
+          //delete users[socket.user];
+          console.log(users[i] + " has left.");
+          io.emit('server message', users[i] + ' has left the chat');
+          users.splice(i,1);
         }
       }
     updateClients(); 
@@ -33,6 +37,10 @@ io.on('connection', function(socket){
 
   function updateClients() {
     io.sockets.emit('update', users);
+    console.log("updateClients();");
+    for(var i=0; i<users.length; i++) {
+      console.log(users[i]);
+    }
   }
 });
 
