@@ -11,8 +11,8 @@ var socket = io();
 		    	case ":kyubey":
 			    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
 			    	break;
-			    case ":deko":	    
-		    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
+			    case ":deko-desu":	    
+		    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/nmPPCkF6-fk?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
 		    		break;
 			    case ":snout":	    
 		    		$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/-Lmh4vT-bSE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
@@ -26,8 +26,9 @@ var socket = io();
 		    	case ":gasp":
 					$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/gasp.png">'));
 		    		break;
-		    	case "":
+		    	case ":idontgetit":
 					//$('#messages').append($(''));
+					$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/2aegP8j5al0?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
 		    		break;
 		    	default: 
 		    		$('#messages').append($('<li>').text(msg));

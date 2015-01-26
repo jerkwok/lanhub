@@ -13,6 +13,7 @@ io.on('connection', function(socket){
   io.emit('server message', 'someone has joined the chat');
   socket.on('disconnect', function(){
     console.log('user disconnected');
+    io.emit('server message', 'someone has left the chat');
   });
 });
 
