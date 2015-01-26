@@ -5,14 +5,11 @@ var socket = io();
     	if(u == null){
     		u = "guest";
     	}
-    	while(u.trim().length == 0){
+    	while(u.trim().length == 0 || u.length > 20){
     		var u = prompt("Your name is wrong.");
     		if(u == null){
     		u = "guest";
     		}
-    	}
-    	if(u == null){
-    		u = "guest";
     	}
      	socket.emit('adduser', u);
     });	
