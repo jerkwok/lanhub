@@ -62,7 +62,7 @@ form button {
 #users{
 	padding:10px 20px;
 }
-#user{ padding-left:20px; padding-top:3px;}
+#user{ list-style-type: none; text-indent:20px; padding-top:2px;}
 #footer{
 	position:absolute;
 	bottom:0;

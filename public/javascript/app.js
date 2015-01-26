@@ -23,7 +23,7 @@ var socket = io();
         userList = users;
         $('#user').empty();
         for(var i=0; i<userList.length; i++) {
-            $('#user').append(userList[i] + "<br>"); 
+            $('#user').append("<li>"+userList[i]); 
         }
     });
 
