@@ -35,7 +35,6 @@ var username;
 
 	socket.on('chat message', function(msg,username){
 		if(msg.trim().length != 0){
-			//$('#messages').append($('<li>').text("test"));
 		    switch(msg){
 		    	case ":kyubey":
 			    	$('#messages').append($('<li><img src="http://www.lyninx.com/lanhub/kyubey.png">'));
@@ -60,13 +59,40 @@ var username;
 					$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/2aegP8j5al0?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
 		    		break;
 		    	default: 
-		    		$('#messages').append($('<li>').text(username+": "+msg));
+		    		$('#messages').append($('<li>').text(username+": "+msg).append($('<div id="timestamp">').text(getTime())));
 			}
 		}
 	scrollToBottom('messagebox');
 	});
 
 	socket.on('server message', function(msg){
-		$('#messages').append($('<li style="color:#F00">').text(msg));
+		$('#messages').append($('<li style="color:#F00">').text(msg).append($('<div id="timestamp">').text(getTime())));
 		scrollToBottom('messagebox');
-});
+	});
+
+	function getTime() {
+    var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds(); 
+    if(month.toString().length == 1) {
+        var month = '0'+month;
+    }
+    if(day.toString().length == 1) {
+        var day = '0'+day;
+    }   
+    if(hour.toString().length == 1) {
+        var hour = '0'+hour;
+    }
+    if(minute.toString().length == 1) {
+        var minute = '0'+minute;
+    }
+    if(second.toString().length == 1) {
+        var second = '0'+second;
+    }   
+    var time = hour+':'+minute+':'+second;   
+     return time;
+}

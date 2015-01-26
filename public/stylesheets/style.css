@@ -75,6 +75,10 @@ form button {
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 0px; text-indent:1.25%;}
 #messages li:nth-child(odd) { background: #eee; }
+#timestamp{
+	float:right; 
+	width:100px;
+}
 #messagebox{
     overflow-x:hidden;
     overflow-y:visible;
