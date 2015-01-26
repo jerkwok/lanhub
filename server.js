@@ -16,7 +16,6 @@ io.on('connection', function(socket){
   socket.on('adduser', function (user) {
     socket.user = user;
     users.push(user);
-    username = user;
     updateClients();
     io.emit('server message', user +" has joined the chat.");
   });
@@ -47,7 +46,13 @@ io.on('connection', function(socket){
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    var username = "username";
+    for(var i=0; i<users.length; i++) {
+      if(users[i] == socket.user) {
+        username = users[i];
+      }
+    }
+    io.emit('chat message', msg,username);
     //scrollToBottom('messagebox');
   });
 });
