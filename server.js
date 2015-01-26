@@ -28,7 +28,7 @@ io.on('connection', function(socket){
           //delete users[i]; //doesnt work lol
           //delete users[socket.user];
           console.log(users[i] + " has left.");
-          io.emit('server message', users[i] + ' has left the chat');
+          io.emit('server message', users[i] + " has left the chat");
           users.splice(i,1);
         }
       }
@@ -37,7 +37,7 @@ io.on('connection', function(socket){
 
   function updateClients() {
     io.sockets.emit('update', users);
-    console.log("updateClients();");
+    console.log("users online:");
     for(var i=0; i<users.length; i++) {
       console.log(users[i]);
     }

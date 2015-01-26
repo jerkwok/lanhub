@@ -1,7 +1,20 @@
 var socket = io();	
 
     socket.on('connect', function (){
-     	socket.emit('adduser', prompt("What's your name?"));
+    	var u = prompt("what's your name?");
+    	if(u == null){
+    		u = "guest";
+    	}
+    	while(u.trim().length == 0){
+    		var u = prompt("Your name is wrong.");
+    		if(u == null){
+    		u = "guest";
+    		}
+    	}
+    	if(u == null){
+    		u = "guest";
+    	}
+     	socket.emit('adduser', u);
     });	
 
  	var userList = [];
