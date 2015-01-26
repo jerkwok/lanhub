@@ -60,7 +60,7 @@ var username;
 					$('#messages').append($('<li><iframe width="560" height="315" src="//www.youtube.com/embed/2aegP8j5al0?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'));
 		    		break;
 		    	default: 
-		    		$('#messages').append($('<li>').text(username+": " +msg));
+		    		$('#messages').append($('<li>').text(msg));
 			}
 		}
 	scrollToBottom('messagebox');
